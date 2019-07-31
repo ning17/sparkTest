@@ -15,13 +15,13 @@ public class Test1 {
             list.add(i);
         }
         JavaRDD<Integer> numRDD = (JavaRDD<Integer>) sc.parallelize(list);
-        Integer sum = numRDD.reduce(new Function2<Integer, Integer, Integer>() {
+        Integer count = numRDD.reduce(new Function2<Integer, Integer, Integer>() {
             public Integer call(Integer v1, Integer v2) throws Exception {
                 return v1 + v2;
             }
         });
 
-        System.out.println(sum);
+        System.out.println(count);
 
 
     }
